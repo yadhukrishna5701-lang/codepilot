@@ -1,0 +1,146 @@
+#api cal for create admin account
+###
+POST http://127.0.0.1:8000/accounts/admin/register/
+Content-Type: application/json
+
+{
+    "username":"admin1",
+    "email":"admin1@gmail.com",
+    "password":"admin1@123",
+    "phone":"9876543210"
+}
+
+
+#api cal for create student account
+###
+POST http://127.0.0.1:8000/accounts/student/register/
+Content-Type: application/json
+
+{
+    "username":"student1",
+    "email":"student1@gmail.com",
+    "password":"student1@123",
+    "phone":"9876543200"
+}
+
+#api call for token 
+###
+POST http://127.0.0.1:8000/assesments/token/ 
+Content-Type: application/json
+
+{
+    "username":"student",
+    "password":"student@123"
+}
+
+#api call for list
+###
+GET http://127.0.0.1:8000/assesments/all/ 
+Accept: application/json
+Authorization: Token eaca794fd40232d936daa8abf8ade4f7e1fac4d6
+
+#api cal for create assessment
+###
+POST http://127.0.0.1:8000/assesments/add/ 
+Content-Type: application/json
+Authorization: Token eaca794fd40232d936daa8abf8ade4f7e1fac4d6
+
+{
+    "title":"assessmwnt 8",
+    "batch":"june 2k26",
+    "language":"python",
+    "exam_date":"2026-11-01",
+    "start_time":"10:00",
+    "duration":2,
+    "status":"pending"
+}
+
+#api call for retrieve 
+###
+GET http://127.0.0.1:8000/assesments/8/
+Accept: application/json
+Authorization: Token eaca794fd40232d936daa8abf8ade4f7e1fac4d6
+
+#api cal for update
+###
+PUT http://127.0.0.1:8000/assesments/1/
+Content-Type: application/json
+Authorization: Token eaca794fd40232d936daa8abf8ade4f7e1fac4d6
+
+{
+  "id": 1,
+  "created_by": "admin1",
+  "title": "assessment 6",
+  "batch": "june 2k26",
+  "language": "python",
+  "exam_date": "2026-10-26",
+  "start_time": "11:00:00",
+  "duration": 2,
+  "end_time": "13:00:00",
+  "status": "submitted"
+}
+
+#api cal for delete
+###
+DELETE http://127.0.0.1:8000/assesments/2/
+Accept: application/json
+Authorization: Token eaca794fd40232d936daa8abf8ade4f7e1fac4d6
+
+#api call for creating question
+###
+POST http://127.0.0.1:8000/problem/assessment/8/question/
+Content-Type: application/json
+Authorization: Token eaca794fd40232d936daa8abf8ade4f7e1fac4d6
+
+{
+    "title":"create a django project for hospital",
+    "description":"create a hospital system using django",
+    "score":20
+}
+
+#api cal for retrieve question
+###
+GET http://127.0.0.1:8000/problem/assessment/question/4/ 
+Accept: application/json
+Authorization: Token eaca794fd40232d936daa8abf8ade4f7e1fac4d6
+
+
+#api cal for update question
+###
+PUT http://127.0.0.1:8000/problem/assessment/question/1/ 
+Content-Type: application/json
+Authorization: Token eaca794fd40232d936daa8abf8ade4f7e1fac4d6
+
+{
+  "id": 1,
+  "assessment": "assessment 6",
+  "created_by": "admin1",
+  "title": "write a programe to add a two numbers",
+  "description": "write a python program to add two numbers without using sum()",
+  "score": 20,
+  "sample_input": "num1=10 num2=20",
+  "sample_output": "result = 10",
+  "created_at": "2026-10-26T15:30:05.990448Z",
+  "question_number": null,
+  "updated_at": "2026-10-26T15:30:05.990477Z"
+}
+
+
+#api cal for submission
+###
+POST http://127.0.0.1:8000/evaluation/assessment/8/submission/ 
+Content-Type: application/json
+Authorization: Token 4a4694445ba66dea4ce9365dd0fe9ba6728361cf
+
+#api cal for add answer
+###
+POST http://127.0.0.1:8000/evaluation/submission/17/answer/
+Content-Type: application/json
+Authorization: Token 4a4694445ba66dea4ce9365dd0fe9ba6728361cf
+
+{
+    "question":5,
+    "answer_text":"hospital system creation started"
+}
+
+
