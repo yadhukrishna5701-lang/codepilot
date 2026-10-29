@@ -29,8 +29,8 @@ POST http://127.0.0.1:8000/assesments/token/
 Content-Type: application/json
 
 {
-    "username":"student",
-    "password":"student@123"
+    "username":"student1",
+    "password":"student1@123"
 }
 
 #api call for list
@@ -100,7 +100,7 @@ Authorization: Token eaca794fd40232d936daa8abf8ade4f7e1fac4d6
 
 #api cal for retrieve question
 ###
-GET http://127.0.0.1:8000/problem/assessment/question/4/ 
+GET http://127.0.0.1:8000/problem/assessment/question/5/ 
 Accept: application/json
 Authorization: Token eaca794fd40232d936daa8abf8ade4f7e1fac4d6
 
@@ -130,13 +130,13 @@ Authorization: Token eaca794fd40232d936daa8abf8ade4f7e1fac4d6
 ###
 POST http://127.0.0.1:8000/evaluation/assessment/8/submission/ 
 Content-Type: application/json
-Authorization: Token 4a4694445ba66dea4ce9365dd0fe9ba6728361cf
+Authorization: Token 42790fa7fc0aa34ab80c0155488a28204b512774
 
 #api cal for add answer
 ###
-POST http://127.0.0.1:8000/evaluation/submission/17/answer/
+POST http://127.0.0.1:8000/evaluation/submission/18/answer/
 Content-Type: application/json
-Authorization: Token 4a4694445ba66dea4ce9365dd0fe9ba6728361cf
+Authorization: Token 42790fa7fc0aa34ab80c0155488a28204b512774
 
 {
     "question":5,
@@ -144,3 +144,19 @@ Authorization: Token 4a4694445ba66dea4ce9365dd0fe9ba6728361cf
 }
 
 
+#api cal for retrieve submission
+###
+GET http://127.0.0.1:8000/evaluation/submission/18/ 
+Accept: application/json
+Authorization: Token eaca794fd40232d936daa8abf8ade4f7e1fac4d6
+
+#api cal for evaluate
+###
+PUT http://127.0.0.1:8000/evaluation/answer/1/ 
+Content-Type: application/json
+Authorization: Token eaca794fd40232d936daa8abf8ade4f7e1fac4d6
+
+{
+    "marks_awarded":5,
+    "feedback":"poyi padikada oole"
+}
